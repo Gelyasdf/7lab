@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Для Mui -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mui/4.12.0/css/mui.min.css" integrity="sha512-J8sC7H6Oam/A1y+y9E5xYlXv0K3HADpwIprn6WWYThbIkyzKQNBhI3BKROn9C0Mzbf2bODQm6BvFGI4yxj3y1A==" crossorigin="anonymous" />
+  <!-- Для Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Lab_7</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="center">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О себе</a></li>
+        </ul>
+      </div>
+      <div class="buttonRight">
+        <button onclick="toggleTheme()">Изменить тему</button>
+      </div>
+        <button onclick="toggleMenu()">Меню</button>
+    </nav>
+    <div id="menu" style="display: none;">
+        <ul>
+            <li><a href="#">Лабораторная работа 1</a></li>
+            <li><a href="#">Лабораторная работа 2</a></li>
+            <li><a href="#">Лабораторная работа 3</a></li>
+        </ul>
+    </div>
+</header>
+
+<footer>
+  <nav>
+    <div class="center">
+      <ul>
+          <li><a href="#">Обратная связь</a></li>
+          <li><a href="#">Еще действие</a></li>
+      </ul>
+    </div>
+  </nav>
+</footer>
+
+<!-- Для Mui -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mui/4.12.0/js/mui.min.js" integrity="sha512-S0sjI6jKMjmVYQIhejCMbpLZQAsZUf1Nb5EuxGclJYrJTV5LEhjKtQZbSY4c84P4btpvHjOz2fW//D0YXx6CGw==" crossorigin="anonymous"></script>
+<!-- Для Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Функция для открытия/закрытия меню
+  function toggleMenu() {
+      var menu = document.getElementById("menu");
+      if (menu.style.display === "block") {
+          menu.style.display = "none";
+      } else {
+          menu.style.display = "block";
+      }
+  }
+
+    // Функция для изменения темы
+    function toggleTheme() {
+        var body = document.body;
+        // Проверяем, есть ли у body класс 'dark-theme'
+        var isDarkTheme = body.classList.contains('dark-theme');
+        // Если текущая тема - темная, переключаем на светлую
+        if (isDarkTheme) {
+            body.classList.remove('dark-theme');
+        } else {
+            // Если текущая тема - светлая, переключаем на темную
+            body.classList.add('dark-theme');
+        }
+    }
+</script>
+  
+</body>
+</html>
